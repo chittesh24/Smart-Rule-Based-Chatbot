@@ -1,0 +1,138 @@
+intents:
+- intent: greeting
+  patterns:
+  - ^(hi|hello|hey)\b
+  responses:
+  - Hello! 👋 How can I help you today?
+  sentiment: positive
+- intent: product_info
+  patterns:
+  - \b(products?|services?)\b
+  - \bshow me products\b
+  responses:
+  - 'We offer an amazing range of tech products! 🛍️
+
+
+    📱 **SMARTPHONES & TABLETS**
+
+    • SmartPhone Pro X - \$899
+
+    • SmartPhone Mini - \$599
+
+    • TabletPro 12 - \$749
+
+
+    💻 **LAPTOPS & COMPUTERS**
+
+    • UltraBook Air 15 - \$1,299
+
+    • GamingBook Pro - \$1,899
+
+    • MiniPC Desktop - \$499
+
+
+    ⌚ **WEARABLES**
+
+    • FitWatch Elite - \$349
+
+    • FitBand Sport - \$129
+
+
+    🎧 **AUDIO**
+
+    • AirPods Max Pro - \$249
+
+    • SoundBar Elite - \$399
+
+    • Gaming Headset Pro - \$149
+
+
+    🏠 **SMART HOME**
+
+    • SmartHub Voice - \$79
+
+    • SecurityCam 4K - \$199
+
+    • Smart Bulbs (4-pack) - \$49
+
+
+    📷 **CAMERAS & PHOTOGRAPHY**
+
+    • DSLR Camera Pro - \$1,499
+
+    • Action Cam 4K - \$399
+
+    • Instant Camera Mini - \$129
+
+
+    🎮 **GAMING**
+
+    • Gaming Console X - \$499
+
+    • VR Headset Pro - \$599
+
+    • Gaming Controller Elite - \$79
+
+
+    🖥️ **MONITORS & DISPLAYS**
+
+    • UltraWide Monitor 34'''' - \$799
+
+    • 4K Display 27'''' - \$549
+
+    • Portable Monitor 15'''' - \$249
+
+
+    🔌 **ACCESSORIES**
+
+    • Wireless Charger Fast - \$49
+
+    • USB-C Hub Pro - \$89
+
+    • Phone Case Premium - \$29
+
+
+    ☁️ **SERVICES**
+
+    • CloudSync Pro - \$9.99/month
+
+    • Premium Support - \$4.99/month
+
+
+    What interests you?'
+  - 'Great question! Here''s our complete catalog:
+
+
+    📱 Phones & Tablets: 3 models (\$599-\$899)
+
+    💻 Computers: 3 models (\$499-\$1,899)
+
+    ⌚ Wearables: 2 models (\$129-\$349)
+
+    🎧 Audio: 3 models (\$149-\$399)
+
+    🏠 Smart Home: 3 models (\$49-\$199)
+
+    📷 Cameras: 3 models (\$129-\$1,499)
+
+    🎮 Gaming: 3 models (\$79-\$599)
+
+    🖥️ Monitors: 3 models (\$249-\$799)
+
+    🔌 Accessories: 3 models (\$29-\$89)
+
+    ☁️ Services: 2 plans (from \$4.99/mo)
+
+
+    ✨ All with free shipping & warranty!
+
+    Which category interests you?'
+  sentiment: neutral
+fallback_responses:
+- I am not quite sure I understand. Could you rephrase that?
+- Hmm, I do not have information about that. Can you ask in a different way?
+sentiment_modifiers:
+  positive: 😊
+  neutral: 👍
+  empathetic: 🤗
+  negative: 😔

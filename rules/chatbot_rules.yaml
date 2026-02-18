@@ -1,0 +1,608 @@
+intents:
+- intent: greeting
+  patterns:
+  - ^(hi|hello|hey|greetings|good morning|good afternoon|good evening|howdy|hola|sup|yo)\b
+  - \bhey there\b
+  - \bhow are you\b
+  responses:
+  - Hello! 👋 How can I help you today?
+  - Hi there! 😊 What can I do for you?
+  - Hey! Welcome! How may I assist you?
+  - Greetings! I'm here to help. What do you need?
+  sentiment: positive
+- intent: farewell
+  patterns:
+  - ^(bye|goodbye|see you|farewell|exit|quit|close|later|peace|adios|ciao)\b
+  - \btalk to you later\b
+  - \bgotta go\b
+  - \btake care\b
+  responses:
+  - Goodbye! 👋 Have a great day!
+  - See you later! Feel free to come back anytime! 😊
+  - Take care! Hope I was helpful!
+  - Bye! Come back if you need anything! 🌟
+  sentiment: positive
+- intent: gratitude
+  patterns:
+  - ^(thank|thanks|thx|appreciate|grateful)\b
+  - \bthank you\b
+  - \bthanks a lot\b
+  - \bmuch appreciated\b
+  responses:
+  - You're welcome! 😊 Happy to help!
+  - No problem! Glad I could assist! 🌟
+  - My pleasure! Let me know if you need anything else!
+  - Anytime! That's what I'm here for! 💙
+  sentiment: positive
+- intent: help
+  patterns:
+  - \bhelp\b
+  - \bwhat can you do\b
+  - \bfeatures\b
+  - \bcapabilities\b
+  - \bhow do you work\b
+  - \bcommands\b
+  responses:
+  - 'I can help you with:
+
+    • Browse our complete product catalog
+
+    • Get detailed product specifications
+
+    • Compare prices across categories
+
+    • Technical support and troubleshooting
+
+    • Contact information
+
+    • Business hours
+
+    • And much more! Just ask! 😊'
+  - 'Here''s what I can do:
+
+    ✅ Provide detailed product information
+
+    ✅ Answer questions about pricing
+
+    ✅ Help you find the perfect device
+
+    ✅ Offer technical assistance
+
+    ✅ Share contact details
+
+
+    What would you like to know?'
+  sentiment: neutral
+- intent: about_bot
+  patterns:
+  - \bwho are you\b
+  - \bwhat are you\b
+  - \byour name\b
+  - \btell me about yourself\b
+  - \bare you (a )?bot\b
+  - \bare you (a )?robot\b
+  - \bare you human\b
+  responses:
+  - I'm a smart shopping assistant powered by AI! 🤖 I help you find the perfect tech
+    products, answer questions about specifications, and provide expert recommendations.
+    I'm here 24/7 to assist you!
+  - I'm your personal tech advisor! 💡 I use advanced pattern matching to understand
+    your needs and provide helpful product recommendations. How can I help you find
+    your next device?
+  sentiment: neutral
+- intent: product_info
+  patterns:
+  - \b(products?|services?|offerings?|catalog)\b
+  - \bwhat do you (sell|offer|provide|have)\b
+  - \bshow me (products|catalog|everything)\b
+  - \btell me about your products\b
+  - \b(product|item) (list|catalog)\b
+  - \bavailable products\b
+  responses:
+  - "We offer an amazing range of tech products! \U0001F6CD️\n\n\U0001F4F1 **SMARTPHONES\
+    \ & TABLETS**\n• SmartPhone Pro X - $899\n  ▸ 6.7\" AMOLED display, 5G ready\n\
+    \  ▸ Triple camera system (108MP)\n  ▸ 256GB storage, 12GB RAM\n  ▸ All-day battery\
+    \ life (5000mAh)\n\n• SmartPhone Mini - $599\n  ▸ Compact 5.4\" Super Retina display\n\
+    \  ▸ Dual camera (12MP wide + ultra-wide)\n  ▸ 128GB storage, A15 Bionic chip\n\
+    \  ▸ Perfect for one-handed use\n\n• TabletPro 12 - $749\n  ▸ 12.9\" Liquid Retina\
+    \ display\n  ▸ M1 chip for desktop-class performance\n  ▸ Apple Pencil & Magic\
+    \ Keyboard support\n  ▸ 256GB storage, all-day battery\n\n\U0001F4BB **LAPTOPS\
+    \ & COMPUTERS**\n• UltraBook Air 15 - $1,299\n  ▸ Ultra-thin 15.6\" laptop (2.9\
+    \ lbs)\n  ▸ Intel Core i7, 16GB RAM, 512GB SSD\n  ▸ 12+ hours battery life\n \
+    \ ▸ Backlit keyboard, Thunderbolt 4\n\n• GamingBook Pro - $1,899\n  ▸ Gaming powerhouse\
+    \ with RTX 4060\n  ▸ Intel i9, 32GB RAM, 1TB NVMe SSD\n  ▸ 165Hz QHD display\n\
+    \  ▸ Advanced cooling system, RGB keyboard\n\n• MiniPC Desktop - $499\n  ▸ Compact\
+    \ desktop (4.5\" x 4.5\")\n  ▸ Intel i5, 16GB RAM, 512GB SSD\n  ▸ WiFi 6, Bluetooth\
+    \ 5.2\n  ▸ Perfect for home office\n\n⌚ **WEARABLES**\n• FitWatch Elite - $349\n\
+    \  ▸ Advanced health tracking\n  ▸ ECG, blood oxygen, sleep analysis\n  ▸ GPS,\
+    \ water resistant (50m)\n  ▸ 7-day battery life\n\n• FitBand Sport - $129\n  ▸\
+    \ Fitness tracker with heart rate\n  ▸ 20+ sport modes\n  ▸ 14-day battery, water\
+    \ resistant\n  ▸ Smart notifications\n\n\U0001F3A7 **AUDIO**\n• AirPods Max Pro\
+    \ - $249\n  ▸ Active noise cancellation\n  ▸ Spatial audio with head tracking\n\
+    \  ▸ 30-hour battery life\n  ▸ Premium sound quality\n\n• SoundBar Elite - $399\n\
+    \  ▸ Dolby Atmos support\n  ▸ 11 speakers, wireless subwoofer\n  ▸ WiFi, Bluetooth,\
+    \ HDMI eARC\n  ▸ 400W total power\n\n• Gaming Headset Pro - $149\n  ▸ 7.1 surround\
+    \ sound\n  ▸ Detachable noise-canceling mic\n  ▸ RGB lighting, memory foam cushions\n\
+    \  ▸ PC, PlayStation, Xbox compatible\n\n\U0001F3E0 **SMART HOME**\n• SmartHub\
+    \ Voice - $79\n  ▸ Voice-controlled smart hub\n  ▸ Works with Alexa & Google\n\
+    \  ▸ Controls 100+ devices\n  ▸ Premium speaker quality\n\n• SecurityCam 4K -\
+    \ $199\n  ▸ 4K HDR video recording\n  ▸ 180° field of view\n  ▸ Color night vision,\
+    \ 2-way audio\n  ▸ Weather resistant, cloud storage\n\n• Smart Bulbs (4-pack)\
+    \ - $49\n  ▸ 16 million colors, dimmable\n  ▸ Voice & app control\n  ▸ Energy\
+    \ efficient (9W = 60W)\n  ▸ 25,000 hour lifespan\n\n\U0001F4F7 **CAMERAS & PHOTOGRAPHY**\n\
+    • DSLR Camera Pro - $1,499\n  ▸ 45MP full-frame sensor\n  ▸ 4K 60fps video recording\n\
+    \  ▸ Dual card slots, weather sealed\n  ▸ Advanced autofocus system\n\n• Action\
+    \ Cam 4K - $399\n  ▸ 4K 120fps, slow motion capable\n  ▸ Waterproof to 10m without\
+    \ case\n  ▸ Image stabilization\n  ▸ Voice control, touch screen\n\n• Instant\
+    \ Camera Mini - $129\n  ▸ Fun instant prints\n  ▸ Hybrid digital + instant film\n\
+    \  ▸ Built-in selfie mirror\n  ▸ Includes 10 instant films\n\n\U0001F3AE **GAMING**\n\
+    • Gaming Console X - $499\n  ▸ Next-gen gaming console\n  ▸ 4K gaming at 120fps\n\
+    \  ▸ 1TB custom SSD\n  ▸ Ray tracing support\n\n• VR Headset Pro - $599\n  ▸ Immersive\
+    \ virtual reality\n  ▸ 4K per eye resolution\n  ▸ Inside-out tracking\n  ▸ Wireless\
+    \ PC connectivity\n\n• Gaming Controller Elite - $79\n  ▸ Pro-level customization\n\
+    \  ▸ Interchangeable thumbsticks\n  ▸ Hair trigger locks\n  ▸ 40-hour battery,\
+    \ Bluetooth\n\n\U0001F5A5️ **MONITORS & DISPLAYS**\n• UltraWide Monitor 34\" -\
+    \ $799\n  ▸ 34\" curved QHD (3440x1440)\n  ▸ 144Hz refresh rate\n  ▸ HDR10, 99%\
+    \ sRGB\n  ▸ USB-C with 90W power delivery\n\n• 4K Display 27\" - $549\n  ▸ 27\"\
+    \ 4K UHD (3840x2160)\n  ▸ IPS panel, 99% Adobe RGB\n  ▸ USB-C hub, height adjustable\n\
+    \  ▸ Perfect for creators\n\n• Portable Monitor 15\" - $249\n  ▸ 15.6\" Full HD\
+    \ portable screen\n  ▸ USB-C one-cable solution\n  ▸ Ultra-thin 0.3\" design\n\
+    \  ▸ Includes stand & case\n\n\U0001F50C **ACCESSORIES**\n• Wireless Charger Fast\
+    \ - $49\n  ▸ 15W fast wireless charging\n  ▸ Qi-certified, multi-device\n  ▸ LED\
+    \ indicator, non-slip surface\n  ▸ iPhone & Android compatible\n\n• USB-C Hub\
+    \ Pro - $89\n  ▸ 7-in-1 connectivity hub\n  ▸ 4K HDMI, USB 3.0, SD/microSD\n \
+    \ ▸ 100W power delivery pass-through\n  ▸ Aluminum build, compact design\n\n•\
+    \ Phone Case Premium - $29\n  ▸ Military-grade drop protection\n  ▸ Raised edges\
+    \ for screen safety\n  ▸ Wireless charging compatible\n  ▸ Multiple color options\n\
+    \n☁️ **SERVICES**\n• CloudSync Pro - $9.99/month\n  ▸ 2TB secure cloud storage\n\
+    \  ▸ Auto backup across all devices\n  ▸ Advanced sharing & collaboration\n  ▸\
+    \ 30-day version history\n\n• Premium Support - $4.99/month\n  ▸ 24/7 priority\
+    \ tech support\n  ▸ Extended warranty coverage\n  ▸ Free shipping on all orders\n\
+    \  ▸ Exclusive deals & early access\n\n\U0001F381 FREE shipping on orders over\
+    \ $50!\n\U0001F6E1️ 1-year warranty on all products!\n\U0001F4B3 Easy returns\
+    \ within 30 days!\n\nWhat interests you?"
+  - "Quick Overview - Our Complete Catalog:\n\n\U0001F4F1 Phones & Tablets: 3 models\
+    \ ($599-$899)\n   Premium displays, powerful processors, all-day battery\n\n\U0001F4BB\
+    \ Computers: 3 models ($499-$1,899)\n   From compact desktops to gaming powerhouses\n\
+    \n⌚ Wearables: 2 models ($129-$349)\n   Health tracking, fitness monitoring, smart\
+    \ features\n\n\U0001F3A7 Audio: 3 models ($149-$399)\n   Premium sound, noise\
+    \ cancellation, immersive experience\n\n\U0001F3E0 Smart Home: 3 models ($49-$199)\n\
+    \   Voice control, security, automation\n\n\U0001F4F7 Cameras: 3 models ($129-$1,499)\n\
+    \   From instant fun to professional photography\n\n\U0001F3AE Gaming: 3 models\
+    \ ($79-$599)\n   Next-gen consoles, VR, pro controllers\n\n\U0001F5A5️ Monitors:\
+    \ 3 models ($249-$799)\n   4K displays, high refresh rates, USB-C hubs\n\n\U0001F50C\
+    \ Accessories: 3 models ($29-$89)\n   Fast charging, connectivity hubs, protection\n\
+    \n☁️ Services: 2 plans (from $4.99/mo)\n   Cloud storage, premium support\n\n\
+    ✨ All with free shipping & warranty!\nWhich category would you like to explore?"
+  sentiment: neutral
+- intent: pricing
+  patterns:
+  - \b(price|pricing|cost|expensive|cheap|fee|charge)s?\b
+  - \bhow much\b
+  - \bwhat(\'s| is) the (price|cost)\b
+  - \baffordable\b
+  - \b(smartphone|phone|laptop|watch|earbuds|cloud|tablet|gaming) (price|cost)\b
+  responses:
+  - 'Here are our current prices! 💰
+
+
+    📱 **SMARTPHONES & TABLETS**
+
+    • SmartPhone Pro X: $899
+
+    • SmartPhone Mini: $599
+
+    • TabletPro 12: $749
+
+
+    💻 **LAPTOPS & COMPUTERS**
+
+    • UltraBook Air 15: $1,299
+
+    • GamingBook Pro: $1,899
+
+    • MiniPC Desktop: $499
+
+
+    ⌚ **WEARABLES**
+
+    • FitWatch Elite: $349
+
+    • FitBand Sport: $129
+
+
+    🎧 **AUDIO**
+
+    • AirPods Max Pro: $249
+
+    • SoundBar Elite: $399
+
+    • Gaming Headset Pro: $149
+
+
+    🏠 **SMART HOME**
+
+    • SmartHub Voice: $79
+
+    • SecurityCam 4K: $199
+
+    • Smart Bulbs (4-pack): $49
+
+
+    📷 **CAMERAS**
+
+    • ProCam Mirrorless: $1,499
+
+    • ActionCam 4K: $299
+
+    • InstantCam Mini: $129
+
+
+    🎮 **GAMING**
+
+    • GameConsole Pro: $599
+
+    • Wireless Controller: $79
+
+    • VR Headset: $399
+
+
+    🖥️ **MONITORS**
+
+    • UltraWide Monitor 34": $799
+
+    • 4K Display 27": $549
+
+    • Portable Monitor 15": $249
+
+
+    🔌 **ACCESSORIES**
+
+    • Wireless Charger Pad: $39
+
+    • USB-C Hub 7-in-1: $89
+
+    • Cable Kit (5-pack): $29
+
+
+    ☁️ **SERVICES**
+
+    • CloudSync Pro: $9.99/mo
+
+    • Premium Support: $4.99/mo
+
+
+    ✅ Free shipping over $500!
+
+    What catches your eye?'
+  - 'Our competitive pricing across all categories! 📊
+
+
+    • Smartphones & Tablets: $599 - $899
+
+    • Laptops & Computers: $499 - $1,899
+
+    • Wearables: $129 - $349
+
+    • Audio devices: $149 - $399
+
+    • Smart Home: $49 - $199
+
+    • Cameras: $129 - $1,499
+
+    • Gaming: $79 - $599
+
+    • Monitors: $249 - $799
+
+    • Accessories: $29 - $89
+
+    • Cloud services: From $4.99/mo
+
+
+    🎉 All include warranty!
+
+    💡 Bundle deals available!
+
+    Interested in anything?'
+  sentiment: neutral
+- intent: shipping
+  patterns:
+  - \b(ship|shipping|delivery|deliver|freight)\b
+  - \bhow long\b.*\b(delivery|shipping|arrive)\b
+  - \bwhen will.*arrive\b
+  - \bshipping (cost|fee|price)\b
+  - \bfree shipping\b
+  responses:
+  - "Shipping Information \U0001F4E6\n\n✅ **FREE Standard Shipping**\n   Orders over\
+    \ $500 - FREE!\n   Delivery: 5-7 business days\n\n\U0001F680 **Express Shipping**\
+    \ - $19.99\n   Delivery: 2-3 business days\n   \n⚡ **Overnight** - $39.99\n  \
+    \ Next business day delivery\n   \n\U0001F30D **International Shipping**\n   Available\
+    \ to 150+ countries\n   Rates calculated at checkout\n   \n\U0001F4CD **Track\
+    \ Your Order**\n   Real-time tracking included\n   SMS & email updates\n   \n\U0001F49D\
+    \ **Free Returns**\n   30-day return policy\n   Free return shipping\n   \nQuestions\
+    \ about your order?"
+  - 'We offer fast & reliable shipping! 🚚
+
+
+    • FREE on orders $500+
+
+    • Express: 2-3 days ($19.99)
+
+    • Overnight available
+
+    • International shipping
+
+    • Free tracking & returns
+
+
+    Your satisfaction is guaranteed!'
+  sentiment: positive
+- intent: warranty
+  patterns:
+  - \b(warranty|guarantee|return|refund|exchange)\b
+  - \bwhat if.*broken\b
+  - \bdefective\b
+  - \breturn policy\b
+  - \bmoney back\b
+  responses:
+  - "Warranty & Returns \U0001F6E1️\n\n✅ **Standard Warranty**\n   • 1 year on all\
+    \ products\n   • Covers manufacturing defects\n   • Free repairs or replacement\n\
+    \   \n⭐ **Extended Warranty** (Optional)\n   • 2-year: +$49\n   • 3-year: +$99\n\
+    \   • Accidental damage coverage\n   \n\U0001F504 **30-Day Return Policy**\n \
+    \  • Full refund, no questions asked\n   • Free return shipping\n   • Original\
+    \ packaging not required\n   \n\U0001F4B1 **Easy Exchanges**\n   • Instant replacements\n\
+    \   • Size/color changes free\n   • Upgrade options available\n   \n\U0001F6E0\
+    ️ **Repair Services**\n   • Free diagnostics\n   • Quick turnaround\n   • Loaner\
+    \ devices available\n   \nWe stand behind our products!"
+  - 'Peace of mind guaranteed! 🛡️
+
+
+    • 1-year warranty (all products)
+
+    • 30-day returns, no hassle
+
+    • Free repairs & replacements
+
+    • Extended warranty available
+
+    • Quick exchange process
+
+
+    Your satisfaction is our priority!'
+  sentiment: positive
+- intent: payment
+  patterns:
+  - \b(pay|payment|checkout|card|credit|debit)\b
+  - \baccept.*card\b
+  - \bpayment (method|option)s?\b
+  - \b(paypal|venmo|apple pay|google pay)\b
+  - \binstallment|financing\b
+  responses:
+  - "Payment Options \U0001F4B3\n\n\U0001F4B3 **Credit & Debit Cards**\n   Visa, Mastercard,\
+    \ Amex, Discover\n   \n\U0001F4F1 **Digital Wallets**\n   • Apple Pay\n   • Google\
+    \ Pay\n   • PayPal\n   • Venmo\n   \n\U0001F4B0 **Financing Available**\n   •\
+    \ 0% APR for 12 months\n   • Monthly payments from $50\n   • Instant approval\n\
+    \   • No hidden fees\n   \n\U0001F3EA **Buy Now, Pay Later**\n   • Afterpay\n\
+    \   • Klarna\n   • Affirm\n   \n\U0001F381 **Gift Cards**\n   • Physical & digital\n\
+    \   • Never expire\n   • Perfect for any occasion\n   \n\U0001F512 **100% Secure\
+    \ Checkout**\n   SSL encrypted • PCI compliant\n\nHow would you like to pay?"
+  - 'We accept all major payment methods! 💳
+
+
+    • All major credit cards
+
+    • PayPal, Apple Pay, Google Pay
+
+    • 0% financing available
+
+    • Buy now, pay later options
+
+    • Secure checkout guaranteed
+
+
+    Choose what works best for you!'
+  sentiment: neutral
+- intent: smartphone_products
+  patterns:
+  - \b(smartphone|phone|mobile|iphone|android)s?\b
+  - \bshow me phones\b
+  - \btell me about.*phone\b
+  responses:
+  - "Our Smartphone Lineup! \U0001F4F1\n\n\U0001F4F1 **SmartPhone Pro X - $899**\n\
+    \   ▸ 6.7\" AMOLED Display (120Hz)\n   ▸ Triple Camera System\n     - 108MP main\
+    \ sensor\n     - 48MP ultra-wide\n     - 12MP telephoto (3x zoom)\n   ▸ Qualcomm\
+    \ Snapdragon 8 Gen 2\n   ▸ 256GB storage | 12GB RAM\n   ▸ 5000mAh battery (all-day\
+    \ life)\n   ▸ 5G ready | Wireless charging\n   ▸ IP68 water resistant\n   \n\U0001F4F1\
+    \ **SmartPhone Mini - $599**\n   ▸ Compact 5.4\" Super Retina\n   ▸ Dual Camera\
+    \ (12MP each)\n   ▸ A15 Bionic chip\n   ▸ 128GB storage | 6GB RAM\n   ▸ Perfect\
+    \ for one-handed use\n   ▸ Face ID security\n   ▸ 2400mAh battery\n   \n\U0001F4F1\
+    \ **TabletPro 12 - $749**\n   ▸ 12.9\" Liquid Retina Display\n   ▸ M1 chip (desktop-class\
+    \ power)\n   ▸ 256GB storage | 8GB RAM\n   ▸ Apple Pencil support\n   ▸ Magic\
+    \ Keyboard compatible\n   ▸ All-day battery (10+ hours)\n   ▸ 5G cellular option\
+    \ available\n   \n\U0001F381 Free screen protector & case!\nWhich one interests\
+    \ you?"
+  sentiment: positive
+- intent: laptop_products
+  patterns:
+  - \b(laptop|notebook|computer|macbook|pc)s?\b
+  - \bshow me laptops\b
+  - \btell me about.*laptop\b
+  responses:
+  - "Our Laptop Collection! \U0001F4BB\n\n\U0001F4BB **UltraBook Air 15 - $1,299**\n\
+    \   ▸ Ultra-portable (2.9 lbs)\n   ▸ 15.6\" Full HD display\n   ▸ Intel Core i7-12700H\n\
+    \   ▸ 16GB DDR5 RAM\n   ▸ 512GB NVMe SSD\n   ▸ 12+ hours battery life\n   ▸ Backlit\
+    \ keyboard\n   ▸ Thunderbolt 4 ports\n   ▸ Perfect for professionals!\n   \n\U0001F4BB\
+    \ **GamingBook Pro - $1,899**\n   ▸ 17.3\" QHD display (165Hz)\n   ▸ NVIDIA RTX\
+    \ 4070 GPU\n   ▸ Intel Core i9-13900HX\n   ▸ 32GB DDR5 RAM\n   ▸ 1TB NVMe SSD\n\
+    \   ▸ RGB mechanical keyboard\n   ▸ Advanced cooling system\n   ▸ VR ready\n \
+    \  ▸ Ultimate gaming power!\n   \n\U0001F4BB **MiniPC Desktop - $499**\n   ▸ Compact\
+    \ design (4\" x 4\")\n   ▸ Intel Core i5-12400\n   ▸ 8GB RAM | 256GB SSD\n   ▸\
+    \ Wi-Fi 6 & Bluetooth 5.2\n   ▸ Multiple display support\n   ▸ Silent operation\n\
+    \   ▸ Perfect for home office!\n   \n\U0001F3AE Great for work, gaming & creativity!\n\
+    Need help choosing?"
+  sentiment: positive
+- intent: gaming_products
+  patterns:
+  - \b(gaming|game|console|controller|vr)s?\b
+  - \bshow me gaming\b
+  - \bgamer\b
+  responses:
+  - "Level Up Your Gaming! \U0001F3AE\n\n\U0001F3AE **GameConsole Pro - $599**\n \
+    \  ▸ 4K gaming at 120fps\n   ▸ 1TB custom SSD\n   ▸ Ray tracing support\n   ▸\
+    \ Backward compatible\n   ▸ Exclusive game library\n   ▸ 2 wireless controllers\
+    \ included\n   ▸ 4K Blu-ray player\n   ▸ HDR support\n   \n\U0001F3AE **Wireless\
+    \ Controller - $79**\n   ▸ Ergonomic design\n   ▸ 40-hour battery life\n   ▸ Precision\
+    \ analog sticks\n   ▸ Programmable buttons\n   ▸ Works with PC & console\n   ▸\
+    \ USB-C charging\n   ▸ Multiple color options\n   \n\U0001F97D **VR Headset -\
+    \ $399**\n   ▸ Immersive 4K resolution\n   ▸ 120Hz refresh rate\n   ▸ Inside-out\
+    \ tracking\n   ▸ Wireless & wired modes\n   ▸ Huge game library\n   ▸ Comfortable\
+    \ design\n   ▸ Built-in audio\n   \n⚡ Free gaming bundle with console!\nReady\
+    \ to play?"
+  sentiment: enthusiastic
+- intent: smarthome_products
+  patterns:
+  - \b(smart home|automation|alexa|google home|hub)\b
+  - \bshow me smart home\b
+  - \bhome automation\b
+  responses:
+  - "Transform Your Home! \U0001F3E0\n\n\U0001F3E0 **SmartHub Voice - $79**\n   ▸\
+    \ Voice control (Alexa & Google)\n   ▸ Controls 100+ devices\n   ▸ Built-in speaker\
+    \ (premium sound)\n   ▸ Smart display option\n   ▸ Routines & automation\n   ▸\
+    \ Privacy controls\n   ▸ Works with all major brands\n   \n\U0001F4F9 **SecurityCam\
+    \ 4K - $199**\n   ▸ 4K ultra-clear video\n   ▸ Night vision (up to 30ft)\n   ▸\
+    \ 2-way audio\n   ▸ Motion detection & alerts\n   ▸ Cloud & local storage\n  \
+    \ ▸ Weather resistant (IP66)\n   ▸ 24/7 recording\n   ▸ Mobile app control\n \
+    \  \n\U0001F4A1 **Smart Bulbs 4-pack - $49**\n   ▸ 16 million colors\n   ▸ Dimmable\
+    \ (1-100%)\n   ▸ Voice control compatible\n   ▸ Energy efficient (LED)\n   ▸ Schedule\
+    \ & timers\n   ▸ No hub required\n   ▸ 25,000 hour lifespan\n   \n\U0001F381 Smart\
+    \ home starter bundle available!\nMake your home smarter!"
+  sentiment: positive
+- intent: camera_products
+  patterns:
+  - \b(camera|photography|photo|video|lens)s?\b
+  - \bshow me cameras\b
+  - \bphotographer\b
+  responses:
+  - "Capture Every Moment! \U0001F4F7\n\n\U0001F4F7 **ProCam Mirrorless - $1,499**\n\
+    \   ▸ 45MP full-frame sensor\n   ▸ 4K 60fps video\n   ▸ In-body stabilization\
+    \ (5-axis)\n   ▸ Dual card slots\n   ▸ Weather sealed body\n   ▸ 3.2\" tilting\
+    \ touchscreen\n   ▸ 693-point autofocus\n   ▸ Professional quality!\n   \n\U0001F4F9\
+    \ **ActionCam 4K - $299**\n   ▸ 4K 120fps recording\n   ▸ Waterproof (40ft)\n\
+    \   ▸ Image stabilization\n   ▸ Voice control\n   ▸ Live streaming\n   ▸ Touch\
+    \ screen\n   ▸ Mounts included\n   ▸ Perfect for adventure!\n   \n\U0001F4F8 **InstantCam\
+    \ Mini - $129**\n   ▸ Instant photo printing\n   ▸ Bluetooth connectivity\n  \
+    \ ▸ Selfie mirror\n   ▸ Fun filters & frames\n   ▸ Rechargeable battery\n   ▸\
+    \ Compact & portable\n   ▸ Great for parties!\n   \n\U0001F4E6 Free memory card\
+    \ with purchase!\nReady to shoot?"
+  sentiment: enthusiastic
+- intent: monitor_products
+  patterns:
+  - \b(monitors?|displays?|screens?)\b
+  - \bshow me monitors\b
+  - \bexternal display\b
+  responses:
+  - "Crystal Clear Displays! \U0001F5A5️\n\n\U0001F5A5️ **UltraWide Monitor 34\" -\
+    \ $799**\n   ▸ 34\" curved WQHD (3440x1440)\n   ▸ 144Hz refresh rate\n   ▸ HDR10\
+    \ support\n   ▸ 1ms response time\n   ▸ USB-C with 90W charging\n   ▸ Picture-by-Picture\
+    \ mode\n   ▸ Height adjustable stand\n   ▸ Perfect for multitasking!\n   \n\U0001F5A5\
+    ️ **4K Display 27\" - $549**\n   ▸ 27\" 4K UHD (3840x2160)\n   ▸ IPS panel (99%\
+    \ sRGB)\n   ▸ 60Hz refresh rate\n   ▸ USB-C hub (4 ports)\n   ▸ Ergonomic stand\n\
+    \   ▸ Blue light filter\n   ▸ Ideal for creators!\n   \n\U0001F5A5️ **Portable\
+    \ Monitor 15\" - $249**\n   ▸ 15.6\" Full HD portable\n   ▸ USB-C powered (no\
+    \ adapter!)\n   ▸ Ultra-slim (0.3\" thick)\n   ▸ Magnetic cover/stand\n   ▸ Touch\
+    \ screen option\n   ▸ Works with laptop/phone\n   ▸ Perfect for travel!\n   \n\
+    ✨ Upgrade your viewing experience!\nWhich size suits you?"
+  sentiment: positive
+- intent: contact
+  patterns:
+  - \b(contact|support|help|email|phone|chat)\b
+  - \bhow to reach\b
+  - \bcustomer (service|support)\b
+  - \btalk to (human|person|agent)\b
+  responses:
+  - "We're Here to Help! \U0001F91D\n\n\U0001F4DE **Phone Support**\n   1-800-TECH-HELP\n\
+    \   Mon-Fri: 8am-8pm EST\n   Sat-Sun: 10am-6pm EST\n   \n\U0001F4AC **Live Chat**\n\
+    \   Available 24/7\n   Average wait: <2 minutes\n   \n\U0001F4E7 **Email Support**\n\
+    \   support@techstore.com\n   Response within 24 hours\n   \n\U0001F3EA **Visit\
+    \ Us**\n   100+ retail locations\n   Expert staff ready to help\n   \n\U0001F4BB\
+    \ **Online Resources**\n   • FAQ & Knowledge Base\n   • Video tutorials\n   •\
+    \ Community forums\n   \n\U0001F393 **Tech Support**\n   • Free setup assistance\n\
+    \   • Remote troubleshooting\n   • In-store workshops\n   \nHow can we assist\
+    \ you today?"
+  - 'Multiple ways to reach us! 📞
+
+
+    • Phone: 1-800-TECH-HELP
+
+    • Live Chat: 24/7 available
+
+    • Email: support@techstore.com
+
+    • 100+ stores nationwide
+
+    • Online resources & tutorials
+
+
+    We''re always here for you!'
+  sentiment: helpful
+- intent: locations
+  patterns:
+  - \b(store|location|address|near me|closest)\b
+  - \bwhere.*store\b
+  - \bfind (a )?store\b
+  - \bstore hours\b
+  responses:
+  - "Find a Store Near You! \U0001F3EA\n\n\U0001F4CD **100+ Locations Nationwide**\n\
+    \   \n\U0001F5FA️ **Find Your Nearest Store**\n   Visit: techstore.com/locations\n\
+    \   Or text your ZIP code to: 555-TECH\n   \n\U0001F550 **Store Hours**\n   Monday-Saturday:\
+    \ 10am-9pm\n   Sunday: 11am-7pm\n   Holiday hours may vary\n   \n⭐ **Flagship\
+    \ Stores** (Extended Hours)\n   • New York (Times Square)\n   • Los Angeles (Beverly\
+    \ Hills)\n   • Chicago (Magnificent Mile)\n   • San Francisco (Union Square)\n\
+    \   • Miami (Brickell)\n   \n\U0001F389 **In-Store Services**\n   • Product demos\n\
+    \   • Tech support bar\n   • Trade-in program\n   • Workshops & events\n   • Personal\
+    \ shopping\n   \n\U0001F697 **Curbside Pickup**\n   Order online, pick up in 1\
+    \ hour!\n   \nWhere are you located?"
+  sentiment: helpful
+- intent: deals
+  patterns:
+  - \b(deal|discount|sale|promo|offer|coupon)s?\b
+  - \bon sale\b
+  - \bspecial offer\b
+  - \bsave money\b
+  responses:
+  - "Amazing Deals! \U0001F389\n\n\U0001F525 **Current Promotions**\n   \n\U0001F4B0\
+    \ **Student Discount**\n   15% off with valid student ID\n   Applies to all products!\n\
+    \   \n\U0001F396️ **Military & First Responders**\n   20% off - thank you for\
+    \ your service!\n   \n\U0001F465 **Bundle & Save**\n   Buy 2+ items, save up to\
+    \ 25%\n   Mix & match any products!\n   \n\U0001F382 **Birthday Special**\n  \
+    \ $50 off on your birthday month!\n   Sign up for our rewards program\n   \n\U0001F4E7\
+    \ **Email Signup**\n   Get 10% off your first order\n   Plus exclusive deals weekly\n\
+    \   \n♻️ **Trade-In Program**\n   Get up to $500 for your old device\n   Instant\
+    \ credit towards new purchase\n   \n\U0001F381 **Referral Bonus**\n   Refer a\
+    \ friend, both get $25 off!\n   \n\U0001F4B3 **Price Match Guarantee**\n   We'll\
+    \ match any competitor's price!\n   \nSign up now for exclusive deals!"
+  sentiment: enthusiastic
+fallback_responses:
+- I'm not quite sure I understand. 🤔 Could you rephrase that?
+- Hmm, I don't have information about that. Can you ask in a different way?
+- I'm still learning! 📚 Could you try asking differently, or type 'help' to see what
+  I can do?
+- That's a bit outside my knowledge base. Would you like to contact our support team
+  for help?
+- 'I didn''t quite catch that. Try asking about:
+
+  • Our products/services
+
+  • Pricing and specifications
+
+  • Contact information
+
+  • Technical support
+
+
+  Or type ''help'' for more options!'
+sentiment_modifiers:
+  positive: 😊
+  neutral: 👍
+  empathetic: 🤗
+  negative: 😔

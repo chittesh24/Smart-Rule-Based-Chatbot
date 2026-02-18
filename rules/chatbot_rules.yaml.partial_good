@@ -1,0 +1,238 @@
+# Rule-Based Chatbot Configuration
+# Pattern matching uses regex - patterns are matched in order
+
+intents:
+- intent: greeting
+  patterns:
+  - ^(hi|hello|hey|greetings|good morning|good afternoon|good evening|howdy|hola|sup|yo)\b
+  - \bhey there\b
+  - \bhow are you\b
+  responses:
+  - Hello! 👋 How can I help you today?
+  - Hi there! 😊 What can I do for you?
+  - Hey! Welcome! How may I assist you?
+  - Greetings! I'm here to help. What do you need?
+  sentiment: positive
+- intent: farewell
+  patterns:
+  - ^(bye|goodbye|see you|farewell|exit|quit|close|later|peace|adios|ciao)\b
+  - \btalk to you later\b
+  - \bgotta go\b
+  - \btake care\b
+  responses:
+  - Goodbye! 👋 Have a great day!
+  - See you later! Feel free to come back anytime! 😊
+  - Take care! Hope I was helpful!
+  - Bye! Come back if you need anything! 🌟
+  sentiment: positive
+- intent: gratitude
+  patterns:
+  - ^(thank|thanks|thx|appreciate|grateful)\b
+  - \bthank you\b
+  - \bthanks a lot\b
+  - \bmuch appreciated\b
+  responses:
+  - You're welcome! 😊 Happy to help!
+  - No problem! Glad I could assist! 🌟
+  - My pleasure! Let me know if you need anything else!
+  - Anytime! That's what I'm here for! 💙
+  sentiment: positive
+- intent: help
+  patterns:
+  - \bhelp\b
+  - \bwhat can you do\b
+  - \bfeatures\b
+  - \bcapabilities\b
+  - \bhow do you work\b
+  - \bcommands\b
+  responses:
+  - 'I can help you with:
+
+    • General questions and FAQs
+
+    • Information about our services
+
+    • Technical support
+
+    • Product information
+
+    • And much more! Just ask! 😊'
+  - 'Here''s what I can do:
+
+    ✅ Answer frequently asked questions
+
+    ✅ Provide product/service information
+
+    ✅ Offer technical assistance
+
+    ✅ Share helpful resources
+
+
+    What would you like to know?'
+  sentiment: neutral
+- intent: about_bot
+  patterns:
+  - \bwho are you\b
+  - \bwhat are you\b
+  - \byour name\b
+  - \btell me about yourself\b
+  - \bare you (a )?bot\b
+  - \bare you (a )?robot\b
+  - \bare you human\b
+  responses:
+  - I'm a rule-based chatbot built with Python! 🤖 I use pattern matching to understand
+    and respond to your questions. I'm here 24/7 to assist you!
+  - I'm an AI assistant powered by rule-based logic! 💡 I analyze your messages using
+    patterns and keywords to provide helpful responses. How can I help you today?
+  sentiment: neutral
+- intent: product_info
+  patterns:
+  - \b(products?|services?|offerings?)\b
+  - \bwhat do you (sell|offer|provide)\b
+  - \bshow me products\b
+  - \btell me about your products\b
+  - \bproduct (list|catalog)\b
+  - \bavailable products\b
+  responses:
+  - 'We offer an amazing range of tech products! 🛍️
+
+
+    📱 **SMARTPHONES & TABLETS**
+
+    • SmartPhone Pro X - $899
+
+    • SmartPhone Mini - $599
+
+    • TabletPro 12 - $749
+
+
+    💻 **LAPTOPS & COMPUTERS**
+
+    • UltraBook Air 15 - $1,299
+
+    • GamingBook Pro - $1,899
+
+    • MiniPC Desktop - $499
+
+
+    ⌚ **WEARABLES**
+
+    • FitWatch Elite - $349
+
+    • FitBand Sport - $129
+
+
+    🎧 **AUDIO**
+
+    • AirPods Max Pro - $249
+
+    • SoundBar Elite - $399
+
+    • Gaming Headset Pro - $149
+
+
+    🏠 **SMART HOME**
+
+    • SmartHub Voice - $79
+
+    • SecurityCam 4K - $199
+
+    • Smart Bulbs (4-pack) - $49
+
+
+    📷 **CAMERAS & PHOTOGRAPHY**
+
+    • DSLR Camera Pro - $1,499
+
+    • Action Cam 4K - $399
+
+    • Instant Camera Mini - $129
+
+
+    🎮 **GAMING**
+
+    • Gaming Console X - $499
+
+    • VR Headset Pro - $599
+
+    • Gaming Controller Elite - $79
+
+
+    🖥️ **MONITORS & DISPLAYS**
+
+    • UltraWide Monitor 34'''' - $799
+
+    • 4K Display 27'''' - $549
+
+    • Portable Monitor 15'''' - $249
+
+
+    🔌 **ACCESSORIES**
+
+    • Wireless Charger Fast - $49
+
+    • USB-C Hub Pro - $89
+
+    • Phone Case Premium - $29
+
+
+    ☁️ **SERVICES**
+
+    • CloudSync Pro - $9.99/month
+
+    • Premium Support - $4.99/month
+
+
+    What interests you?'
+  - 'Great question! Here''s our complete catalog:
+
+
+    📱 Phones & Tablets: 3 models ($599-$899)
+
+    💻 Computers: 3 models ($499-$1,899)
+
+    ⌚ Wearables: 2 models ($129-$349)
+
+    🎧 Audio: 3 models ($149-$399)
+
+    🏠 Smart Home: 3 models ($49-$199)
+
+    📷 Cameras: 3 models ($129-$1,499)
+
+    🎮 Gaming: 3 models ($79-$599)
+
+    🖥️ Monitors: 3 models ($249-$799)
+
+    🔌 Accessories: 3 models ($29-$89)
+
+    ☁️ Services: 2 plans (from $4.99/mo)
+
+
+    ✨ All with free shipping & warranty!
+
+    Which category interests you?'
+  sentiment: neutral
+fallback_responses:
+- I'm not quite sure I understand. 🤔 Could you rephrase that?
+- Hmm, I don't have information about that. Can you ask in a different way?
+- I'm still learning! 📚 Could you try asking differently, or type 'help' to see what
+  I can do?
+- That's a bit outside my knowledge base. Would you like to contact our support team
+  for help?
+- 'I didn''t quite catch that. Try asking about:
+
+  • Our products/services
+
+  • Pricing
+
+  • Contact information
+
+  • Technical support
+
+
+  Or type ''help'' for more options!'
+sentiment_modifiers:
+  positive: 😊
+  neutral: 👍
+  empathetic: 🤗
+  negative: 😔
